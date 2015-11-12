@@ -1,7 +1,5 @@
 ---
-title: 首页
 layout: default
-permalinks: /
 ---
 
 <div class="home">
@@ -9,7 +7,7 @@ permalinks: /
   <h1 class="page-heading">博客列表</h1>
 
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         <h2>
@@ -20,6 +18,41 @@ permalinks: /
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <div class="pagination-content">
+  {% if paginator.total_pages > 1 %}
+  <ul class="custom-pagination">
+    <li>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+  {% else %}
+    <span>&laquo;</span>
+  {% endif %}
+    </li>
 
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <li class="active">
+        <a href="javascript: void(0)">{{ page }}</a>
+      </li>
+    {% elsif page == 1 %}
+      <li>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+  <li>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+  {% else %}
+    <span>&raquo;</span>
+  {% endif %}
+  </li>
+  </ul>
+{% endif %}
+  </div>
 </div>

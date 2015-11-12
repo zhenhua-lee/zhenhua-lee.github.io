@@ -9,7 +9,7 @@
 title: 前端之路 - DRY
 email: lizhenhua230@gmail.com
 description: >
- 记录前端开发的点点滴滴，不贪多，不急躁!
+ 记录前端之路的点点滴滴，不贪多，不急躁!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://zhenhua-lee.github.io" # the base hostname & protocol for your site
 github_username:  zhenhua-lee
@@ -19,6 +19,10 @@ zhihu: http://www.zhihu.com/people/zhenhua.lee
 permalink: none
 # Build settings
 markdown: kramdown
+
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "/page:num"
 
 defaults:
   -
