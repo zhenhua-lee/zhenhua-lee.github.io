@@ -1,15 +1,21 @@
 ---
 layout: page
-title: About
+title: 关于我
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+前端之路
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+- 2012年开始接触前端
+- 2013.07 - 2013.09 阿里巴巴实习
+- 2014.04 - 至今 美团网前端工程师
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+个人信息
+
+- email: <lizhenhua230@gmail.com>
+- 知乎: <a href="{{site.zhihu}}" target="_blank" style="margin-left: 10px">
+<img src="/img/other/zhihu.png" width="50px" height="30px"/>
+</a>
+- 微博: <a href="{{site.weibo}}" target="_blank" style="margin-left: 10px">
+<img src="/img/other/weibo.jpeg" width="30px" height="30px"/>
+</a>

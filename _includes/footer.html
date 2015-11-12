@@ -1,18 +1,15 @@
 <footer class="site-footer">
-
   <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="footer-col footer-col-4">
         <ul class="contact-list">
           <li>{{ site.title }}</li>
+          <li>{{ site.description }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="footer-col footer-col-5">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -20,16 +17,19 @@
           </li>
           {% endif %}
 
-          {% if site.twitter_username %}
           <li>
-            {% include icon-twitter.html username=site.twitter_username %}
+            <a href="{{site.zhihu}}" target="_blank">
+              <img src="/img/other/zhihu.png" class="footer-icon"/>
+              <span>知乎</span>
+            </a>
           </li>
-          {% endif %}
+          <li>
+            <a href="{{site.weibo}}" target="_blank">
+              <img src="/img/other/weibo.jpeg" class="footer-icon"/>
+              <span>微博</span>
+            </a>
+          </li>
         </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
       </div>
     </div>
 
