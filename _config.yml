@@ -11,7 +11,7 @@ email: lizhenhua230@gmail.com
 description: >
  记录前端开发的点点滴滴，不贪多，不急躁!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://zhenhua-lee.github.com" # the base hostname & protocol for your site
+url: "http://zhenhua-lee.github.io" # the base hostname & protocol for your site
 github_username:  zhenhua-lee
 weibo: http://weibo.com/dry230
 zhihu: http://www.zhihu.com/people/zhenhua.lee
