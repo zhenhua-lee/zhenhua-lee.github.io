@@ -1,6 +1,6 @@
 ---
 title: "程序员修炼之道--从小工到专家"
-category: [读书]
+category: reading
 tags: ["软素质", "DRY"]
 excerpt: 阅读《程序员修炼之道》，做些读书笔记，同时结合自己的工作，写下工作中的感悟及不足。
 ---
@@ -334,33 +334,30 @@ var fn = function () {
 
 * 测试框架的最基本工作原理：
 
-```
-// 借鉴jasmine的风格
-function describe (text, fn) {
-	try {
-		fn.apply(...);
-	} catch(e) {
-		assert(text)
-	}
-}
+		// 借鉴jasmine的风格
+		function describe (text, fn) {
+			try {
+				fn.apply(...);
+			} catch(e) {
+				assert(text)
+			}
+		}
 
-function fn () {
-	while (...) {
-		beforeEach();
-		it(text, function () {
-			assert();
-		});
-		afterEach();
-	}
-}
+		function fn () {
+			while (...) {
+				beforeEach();
+				it(text, function () {
+					assert();
+				});
+				afterEach();
+			}
+		}
 
-function assert (expect, actual) {
-	if (expect not equla actual ) {
-		throw new Error();
-	}
-}
-
-```
+		function assert (expect, actual) {
+			if (expect not equla actual ) {
+				throw new Error();
+			}
+		}
 
 * 测试用例的编写需要考虑到成本、可控，因此mock就非常必要
 
@@ -369,21 +366,19 @@ function assert (expect, actual) {
 
 ### 43.无情的测试
 
-
-
 * Test Early, Test Often, Test Automatically.
 
-2. 编一点，测一点。bug被发现越早，进行修复的成本就越低
+* 编一点，测一点。bug被发现越早，进行修复的成本就越低
 
-3. 好的项目拥有的测试代码 > 产品代码
+* 好的项目拥有的测试代码 > 产品代码
 
-4. 测试的种类：单元测试、集成测试、验证和校验、资源耗尽、性能测试、可用性测试
+* 测试的种类：单元测试、集成测试、验证和校验、资源耗尽、性能测试、可用性测试
 
-5. 怎么测试：回归测试、测试数据、演练GUI测试、对测试进行测试、彻底测试
+* 怎么测试：回归测试、测试数据、演练GUI测试、对测试进行测试、彻底测试
 
-6. 大多数测试应该自动完成，也就是对测试结果也进行自动解释
+* 大多数测试应该自动完成，也就是对测试结果也进行自动解释
 
-7. Find Bugs Once. 不断修复测试代码
+* Find Bugs Once. 不断修复测试代码
 
 ####个人理解
 
@@ -393,9 +388,9 @@ function assert (expect, actual) {
 
 	b. 前端组件---单元测试、功能测试
 
-2. 目前在测试方向并没太多经验，现阶段还是边开发，边写测试用例
+* 目前在测试方向并没太多经验，现阶段还是边开发，边写测试用例
 
-3. 对测试结果的描述很重要，需要准确描述测试的作用，否则时间久、人员更换等因素，测试用例的作用就大大折扣
+* 对测试结果的描述很重要，需要准确描述测试的作用，否则时间久、人员更换等因素，测试用例的作用就大大折扣
 
 4. 现阶段测试重点在单元测试、功能测试，尤其是对spy、mock、webdriver上还比较欠缺
 
