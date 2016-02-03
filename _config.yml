@@ -17,10 +17,6 @@ weibo: http://weibo.com/dry230
 zhihu: http://www.zhihu.com/people/zhenhua.lee
 
 permalink: none
-author:                                     #自定义常亮
-  name: zhenhua
-  email: yansu0711@gmail.com
-  link: http://zhenhua.org
 # Build settings
 markdown: kramdown
 
