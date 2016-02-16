@@ -28,7 +28,7 @@ bootstrap使用了很长时间，是页面快速开发的一把利器。最近�
 - 复用: 变量、mixin、function等技术，可以方便地进行代码复用
 - 简洁: 支持each、if等语法，动态输出内容，例如繁琐的grid系统，是通过少量的sass代码做到的
 
-### 2.2 代码结构
+### 2.2 代码层次
 
 根据代码的层次，sass的源码分为如下几部分:
 
@@ -76,8 +76,3 @@ bootstrap里面提供了大量的常用组件，可以直接使用或者简单�
 ## 6. 参考
 
 - [http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/](http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/)
-
-
-
-
-
