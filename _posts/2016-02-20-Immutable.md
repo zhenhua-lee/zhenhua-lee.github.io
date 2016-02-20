@@ -86,6 +86,11 @@ javascript(es5)中存在两类数据结构: primitive value(string、number、bo
 	// 假如仅仅只对age字段操作，使用深度拷贝(deepClone函数)也对list进行了复制，
 	// 这样明显是多余的，存在性能缺陷 
 	
+### 1.3 js本身的无力
+
+在js中实现数据不可变，有两个方法: const(es6)、Object.freeze(es5)。但是这两种方法都是shallow处理，遇到嵌套多深的结构就需要递归处理，又会存在性能上的问题。
+
+	
 ## 2. Immutable的优点
 
 ### 2.1 Persistent data structure
