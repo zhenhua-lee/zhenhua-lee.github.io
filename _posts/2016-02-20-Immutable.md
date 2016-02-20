@@ -1,6 +1,6 @@
 ---
 title: "Immutable.js及在React中的应用"
-category: css
+category: react
 tags: ["Immutable.js", "react"]
 excerpt: >
   immutable是Facebook开源的一个项目，用于实现javascript的数据不可变，解决引用带来的副作用，目前已经在很多场景下得到大量使用。
@@ -104,7 +104,7 @@ Immutable.js提供了7种不可变的数据类型: `List`、`Map` `Stack` `Order
 
 ### 2.2 structural sharing
 
-当我们对一个Immutable对象进行操作的时候，ImmutableJS会只clone该节点以及它的祖先节点，其他保持不变，这样可以共享相同的部分，大大提高性能。
+当我们对一个Immutable对象进行操作的时候，ImmutableJS基于哈希映射树(hash map tries)和vector map tries，只clone该节点以及它的祖先节点，其他保持不变，这样可以共享相同的部分，大大提高性能。
 
 	var obj = {
 	  count: 1,
@@ -245,11 +245,17 @@ Immutable来解决: 因为Immutable的结构不可变性&&结构共享性，能�
 	
 ImmutableJS里面拥有强大的API，并且文档写的很Geek，在对state、store进行操作的时候非常方便。
 
+### 3.4 历史 - 实现回退
+
+可以保存state的每一个状态，并保证该状态不会被修改，这样就可以实现历史记录的回退。
+
 ## 4. React中引入Immutable.js带来的问题
 
 - 源文件过大: 源码总共有5k多行，压缩后有16kb
 - 类型转换: 如果需要频繁地与服务器交互，那么Immutable对象就需要不断地与原生js进行转换，操作起来显得很繁琐
 - 侵入性: 例如引用第三方组件的时候，就不得不进行类型转换；在使用react-redux时，connect的`shouldComponentUpdate`已经实现，此处无法发挥作用。
+	
+
 	
 ## 参考
 
