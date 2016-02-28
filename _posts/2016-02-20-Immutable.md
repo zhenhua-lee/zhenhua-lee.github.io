@@ -118,7 +118,7 @@ Immutable.js提供了7种不可变的数据类型: `List`、`Map` `Stack` `Order
 	var map1 = Immutable.fromJS(obj);
 	var map2 = map1.set('count', 2);
 	
-	console.log(Immutable.is(map1.list, map2.list)); // true
+	console.log(map1.list === map2.list); // true
 	
 从网上找一个图片来说明结构共享的过程:
 
@@ -249,6 +249,19 @@ Immutable来解决: 因为Immutable的结构不可变性&&结构共享性，能�
 ### 3.3 方便 - 强大的API
 	
 ImmutableJS里面拥有强大的API，并且文档写的很Geek，在对state、store进行操作的时候非常方便。
+
+	var obj = { 
+	  name: 'mt', 
+	  info: {
+	    address: 'bj'
+	  } 
+	};
+	Object.freeze(obj);
+	obj.name = 'mt&&dp';
+	obj.info.address = 'bj&&sh';
+	
+	console.log(obj.name); // 'mt'(no change)
+	console.log(obj.info.address); // 'bj&&sh'(change)
 
 ### 3.4 历史 - 实现回退
 
