@@ -40,4 +40,8 @@ node中的模块，从两种语言实现角度来说，存在javscript、c++两�
 ## HTTPS使用
 
 
+## 参考
+
+[https://yjhjstz.gitbooks.io/deep-into-node/content/chapter9/chapter9-1.html](https://yjhjstz.gitbooks.io/deep-into-node/content/chapter9/chapter9-1.html)
+
 
