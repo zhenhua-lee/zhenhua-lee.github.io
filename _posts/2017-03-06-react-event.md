@@ -486,6 +486,72 @@ class App extends React.Component {
 }
 ```
 
+### 4.2 不是所有事件都会委托到document上
+
+前面提到『几乎所有的事件代理(delegate)到`document`』，『几乎』说明存在例外的情况。例如对于`audio`、`video`标签，存在一些媒体事件(例如onplay、onpause)，而这些事件是document不具有的，那么只能在这些标签上进行事件绑定，绑定一个入口分发函数(dispatchEvent)。
+
+```
+// ReactDOMComponent.js
+function trapBubbledEventsLocal() {
+  switch (inst._tag) {
+    case 'iframe':
+    case 'object':
+      inst._wrapperState.listeners = [ReactBrowserEventEmitter.trapBubbledEvent('topLoad', 'load', node)];
+      break;
+    case 'video':
+    case 'audio':
+
+      inst._wrapperState.listeners = [];
+      // Create listener for each media event
+      for (var event in mediaEvents) {
+        if (mediaEvents.hasOwnProperty(event)) {
+          inst._wrapperState.listeners.push(ReactBrowserEventEmitter.trapBubbledEvent(event, mediaEvents[event], node));
+        }
+      }
+      break;
+    case 'source':
+      inst._wrapperState.listeners = [ReactBrowserEventEmitter.trapBubbledEvent('topError', 'error', node)];
+      break;
+    case 'img':
+      inst._wrapperState.listeners = [ReactBrowserEventEmitter.trapBubbledEvent('topError', 'error', node), ReactBrowserEventEmitter.trapBubbledEvent('topLoad', 'load', node)];
+      break;
+    case 'form':
+      inst._wrapperState.listeners = [ReactBrowserEventEmitter.trapBubbledEvent('topReset', 'reset', node), ReactBrowserEventEmitter.trapBubbledEvent('topSubmit', 'submit', node)];
+      break;
+    case 'input':
+    case 'select':
+    case 'textarea':
+      inst._wrapperState.listeners = [ReactBrowserEventEmitter.trapBubbledEvent('topInvalid', 'invalid', node)];
+      break;
+  }
+}
+var mediaEvents = {
+  topAbort: 'abort',
+  topCanPlay: 'canplay',
+  topCanPlayThrough: 'canplaythrough',
+  topDurationChange: 'durationchange',
+  topEmptied: 'emptied',
+  topEncrypted: 'encrypted',
+  topEnded: 'ended',
+  topError: 'error',
+  topLoadedData: 'loadeddata',
+  topLoadedMetadata: 'loadedmetadata',
+  topLoadStart: 'loadstart',
+  topPause: 'pause',
+  topPlay: 'play',
+  topPlaying: 'playing',
+  topProgress: 'progress',
+  topRateChange: 'ratechange',
+  topSeeked: 'seeked',
+  topSeeking: 'seeking',
+  topStalled: 'stalled',
+  topSuspend: 'suspend',
+  topTimeUpdate: 'timeupdate',
+  topVolumeChange: 'volumechange',
+  topWaiting: 'waiting'
+};
+```
+
 ## 5. 小结
 
 React在设计事件机制的时候，利用冒泡原理充分提高事件绑定的效率，使用`EventPluginHub`对回调函数、事件插件进行管理，然后通过一个统一的入口函数实现事件的分发，整个设计思考跟jQuery的事件实现上存在相似的地方，非常值得学习借鉴。
