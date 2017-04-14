@@ -1,12 +1,12 @@
 ---
-title: "flux vs redux vs mobx的对比"
+title: "flux vs redux vs mobx"
 category: react
 tags: ["react", "flux", "redux", "mobx"]
 excerpt: >
   从react出现以后，关于state如何管理成为前端社区的热门话题，例如facebook最早提出的flux、Dan Abramov基于flux改进的redux、react conf2017大会上Preethi Kasireddy讲的mobx。这些state管理框架有如何使用、哪些特点以及它们之间有何异同，这是本文讨论的主要内容。
 ---
 
-# flux vs redux vs mobx的对比
+# flux vs redux vs mobx
 
 从react出现以后，关于state如何管理成为前端社区的热门话题，例如facebook最早提出的flux、Dan Abramov基于flux改进的redux、react conf2017大会上Preethi Kasireddy讲的mobx。这些state管理框架有如何使用、哪些特点以及它们之间有何异同，这是本文讨论的主要内容。
 
