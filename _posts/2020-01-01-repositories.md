@@ -12,6 +12,8 @@ excerpt: >
 
 - [针对API的测试框架](https://kiranz.github.io/just-api/)
   - yml文件描述请求的入参、出参等信息，然后 just-api 进行内容测试
+- [handless browsers](https://github.com/dhamaniasad/HeadlessBrowsers)
+	- 介绍了当前handless浏览器的技术工具汇总
 
 
 ## 关于数据mock
@@ -59,6 +61,11 @@ excerpt: >
 
 - [快速计算机学习课程](https://github.com/1c7/crash-course-computer-science-chinese)
 - [机器人平台](https://github.com/botpress/botpress)
+
+## 常用数据
+
+- [ip查询库1](https://github.com/yourtion/node-ip2region)
+- [ip查询库2](https://github.com/lionsoul2014/ip2region)
 
 ## utils
 
