@@ -134,7 +134,7 @@ mobx是一个简单、可拓展的状态管理库。内部抽象程度很好，�
 
 ![](../img/state-mge/mobx.png)
 
-下面通过一个简单的实例说明mobx如果解决数据:
+下面通过一个简单的实例说明mobx如何解决数据:
 
 ```
 const mobx = require('mobx');
