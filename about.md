@@ -1,24 +1,22 @@
 ---
 layout: page
-title: 关于我
+title: 技术手艺人
 permalink: /about/
 ---
 
-工程师之路
+手艺人成长之路
 
 - 2014.04 - 2017.04 美团
-  - 业务: 商家后台、供应链系统
-  - 技术领域
-    - YUI、React、Redux等框架
-    - 基于 Node 的前后端分离、同构应用
-    - 数据 Mock 方案
-    - 代码质量保障体系建设
+  - React深度用户，源码阅读爱好者
+  - 基于 Node 的前后端分离、同构应用
 - 2017.04 - 至今  阿里云 
-  - 业务: 云计算、企业管控、OpenAPI、Serverless、SEO、开发者服务
-  - 技术领域
-    - Java、Node、Python、Go等
-    - 中台开发，异地多活高可用架构
-    - 云上架构、权限管控
+  - 云上架构设计
+  - 云上管控
+  - 开发者生态：OpenAPI、SDK、编排
+  - 搜索引擎 SEO 
+  - 中台开发，异地多活高可用架构
+  - Java、Node、Python、Go等
+    
 
 个人信息
 
