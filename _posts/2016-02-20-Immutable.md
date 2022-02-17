@@ -271,7 +271,7 @@ ImmutableJS里面拥有强大的API，并且文档写的很Geek，在对state、
 
 - 源文件过大: 源码总共有5k多行，压缩后有16kb
 - 类型转换: 如果需要频繁地与服务器交互，那么Immutable对象就需要不断地与原生js进行转换，操作起来显得很繁琐
-- 侵入性: 例如引用第三方组件的时候，就不得不进行类型转换；在使用react-redux时，connect的`shouldComponentUpdate`已经实现，此处无法发挥作用。
+- 侵入性: 例如引用第三方组件的时候，就不得不进行类型转换；在使用react-redux时，connect的`shouldComponentUpdate`已经实现，此处无法发挥作用
 	
 
 	
